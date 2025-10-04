@@ -8,11 +8,25 @@ const Login = () => {
 
         <form className='relative bg-white p-10 rounded-xl
         text-slate-500'>
-            <h1>Sign Up</h1>
-            <p>Welcome back! Please sign in to continue</p>
-            <div>
-                <img src={assets.user_icon} alt="" />
-                <input type='text' placeholder='Full Name' required/>
+            <h1 className='text-center text-2xl text-neutral-700
+            font-medium'>Sign Up</h1>
+            <p className='text-sm'>Welcome back! Please sign in to continue</p>
+            <div className='border px-6 flex items-center gap-2 
+            rounded-full mt-5'>
+                <img  src={assets.email_icon} alt=""   />
+                <input className='outline-none text-sm'type='text' placeholder='Full Name' required/>
+            </div>
+
+            <div className='border px-6 flex items-center gap-2 
+            rounded-full mt-5'>
+                <img src={assets.email_icon} alt="" />
+                <input className='outline-none text-sm'type='email' placeholder='Email id' required/>
+            </div>
+
+            <div className='border px-6 flex items-center gap-2 
+            rounded-full mt-5'>
+                <img src={assets.lock_icon} alt="" />
+                <input className='outline-none text-sm'type='password' placeholder='Password' required/>
             </div>
         </form>
 

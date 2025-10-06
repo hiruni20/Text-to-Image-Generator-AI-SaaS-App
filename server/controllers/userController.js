@@ -43,7 +43,7 @@ const loginUser = async (req,res) => {
         const user = await userModel.findOne({email})
 
         if (!user) {
-            return res.json({success:false, message: "User dosen't availble"})
+            return res.json({success:false, message: "User dosen't exist."})
         }
 
         const isMatch = await bcrypt.compare(password, user.password)
@@ -60,3 +60,17 @@ const loginUser = async (req,res) => {
         res.json({success:false, message: error.message})
     }
 }
+
+const userCredits = async (req,res) => {
+    try {
+        const {userId} = req.body
+
+        const user = await userModel.findById(userId)
+        res.json({success:true, credits:user.creditBalance, user:{name: user.name}})
+    } catch (error) {
+       console.log(error)
+        res.json({success:false, message: error.message}) 
+    }
+}
+
+export {registerUser, loginUser}

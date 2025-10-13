@@ -16,6 +16,8 @@ const generate1image = async (req,res) => {
             return res.json({ success:false, message: 'No credit Balance', creditBalance: user.creditBalance})
         
         }
+
+    
     } catch (error) {
          console.log(error)
         res.json({success:false, message: error.message}) 

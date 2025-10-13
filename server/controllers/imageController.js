@@ -1,4 +1,4 @@
-import userModel from "../models/userModel"
+import userModel from "../models/userModel.js"
 import FormData from "form-data"
 import axios from 'axios'
 
@@ -43,3 +43,5 @@ const generateImage = async (req,res) => {
         res.json({success:false, message: error.message}) 
     }
 }
+
+export default generateImage
